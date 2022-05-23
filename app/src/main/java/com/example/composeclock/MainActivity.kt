@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ComposeClockTheme {
+            ComposeClockTheme(darkTheme = false) {
                 val viewModel: ClockViewModel = viewModel()
 
                 ClockApp(viewModel)

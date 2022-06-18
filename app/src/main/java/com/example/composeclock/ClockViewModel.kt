@@ -22,11 +22,13 @@ class ClockViewModel: ViewModel() {
     }
 
     fun changeWatchface(){
-        when(uiState.clockMode){
+        uiState = when(uiState.clockMode){
             ClockMode.ANALOG_1 ->
-                uiState = uiState.copy(clockMode = ClockMode.ANALOG_2)
+                uiState.copy(clockMode = ClockMode.ANALOG_2)
             ClockMode.ANALOG_2 ->
-                uiState = uiState.copy(clockMode = ClockMode.ANALOG_1)
+                uiState.copy(clockMode = ClockMode.CIRCULAR_1)
+            ClockMode.CIRCULAR_1 ->
+                uiState.copy(clockMode = ClockMode.ANALOG_1)
         }
 
     }
